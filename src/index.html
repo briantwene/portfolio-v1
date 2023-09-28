@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/content.css" />
+    <link rel="stylesheet" href="styles/timeline.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="page">
+    <div id="home" class="hero">
+      <div class="logo">
+        <h1>Brian Twene</h1>
+      </div>
+
+      <nav>
+       
+          <input type="checkbox" id="nav-toggle" />
+          <label for="nav-toggle" class="hamburger">&#9776;</label>
+
+
+        <ul id="navList" class="menu">
+          <li class="link"><a href="#about">About</a></li>
+          <li class="link"><a href="#work">Work Experience</a></li>
+          <li class="link"><a href="#education">Education</a></li>
+          <li class="link"><a href="#skills">Skills</a></li>
+          <li class="link"><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="content">
+      <div id="about" class="about subcontent">
+        <h2>About</h2>
+
+        <p class="about-main">
+          Hey there 👋🏾. I'm a Front end Developer, that loves building cool and
+          interactive websites. I love trying out new technologies, tools and
+          languages and im currently learning to full stack
+        </p>
+
+        <div class="about-status">
+          <p class="text-md">🔭 I’m currently working on paperflow</p>
+          <p class="text-md">
+            🌱 I’m currently learning Rust, Typescript, Redux
+          </p>
+          <p id="about-icons" class="icons"></p>
+        </div>
+      </div>
+      <div id="skills" class="Skills subcontent">
+        <h2>Skills</h2>
+
+        <p class="text-md">The things I synergise well with</p>
+
+        <p id="skills-icons" class="icons"></p>
+
+        <p class="text-md">Languages I've experienced</p>
+        - list of languages
+      </div>
+      <div id="work" class="work subcontent">
+        <h2>Work Experience</h2>
+
+        <div class="timeline-wrapper">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-item-content">
+                <div class="timeline-item-title">
+                  Frontend Developer @ Continuous Software Ltd
+                </div>
+                <div class="timeline-item-date">
+                  From March 2022 to September 2023
+                </div>
+
+                <div class="timeline-item-info">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero nesciunt, esse pariatur facilis nostrum deleniti
+                  quibusdam quaerat officiis debitis dolorem cupiditate!
+                  Temporibus repellat eveniet sit sunt excepturi, quasi incidunt
+                  corrupti laborum iste, neque obcaecati! Dolorem sunt debitis
+                  nulla praesentium suscipit.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="projects" class="projects subcontent">
+        <h2>Projects</h2>
+
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi,
+        tempore non animi, maiores itaque earum doloremque officia deserunt
+        eaque dignissimos sapiente blanditiis nobis enim, impedit soluta rerum
+        quia? Quas corporis suscipit cum, quasi minima obcaecati. Suscipit,
+        commodi tempora praesentium ipsum obcaecati ipsa, placeat pariatur
+        veniam, quia numquam accusantium? Unde, eos.
+      </div>
+    </div>
+
+    <div class="footer">Footer</div>
+  </body>
+  <script src="./javascript/navbar.js"></script>
+  <script src="./javascript/techstackIcons.js"></script>
+</html>
