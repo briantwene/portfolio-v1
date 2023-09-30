@@ -68,4 +68,3 @@ appendIcons(skillsArray, skillsContainer)
 
 
 
-
