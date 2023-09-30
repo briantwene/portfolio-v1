@@ -1,29 +1,7 @@
-projects
 
-
-- Put old github projects 
-    - make an array with the links and pictures
-    - make a simple card for it 
-    - card can have title
-    - and technology tags yes
-
-- put paperflow link in the about
-
-- put snappub in the project list
+- add transport adviser to project list
 
 - add education back in
 
-- add other languages
+- add other languages experienced
 
-- need to fix css responsiveness
-
-
-
-navbar
-- create toggle
-
-- hide links
-
-on click make dropdown from div
-
-on scrolling bring out the parent div and show button
