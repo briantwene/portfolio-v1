@@ -93,7 +93,7 @@ const iconMarkup = (url, tech) => {
 
 for (const project of projectList) {
   //icons
-  const { iconlist, githubImage } = iconMarkup(project.url, project.tech);
+  const { iconlist, githubImage } = iconMarkup(project.repo, project.tech);
 
   const projectImage = Object.assign(document.createElement("img"), {
     src: project.image
