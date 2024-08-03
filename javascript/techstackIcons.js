@@ -38,8 +38,7 @@ const skillsArray = [
     name: "Docker"
   },
   {
-
-    src: "./images/logos/git.svg"
+    src: "./images/logos/git.svg",
     name: "Git"
   }
 ];
