@@ -1,5 +1,12 @@
 const projectList = [
   {
+    name: "Paperflow",
+    url: "https://github.com/briantwene/paperflow",
+    repo: "https://github.com/briantwene/paperflow",
+    tech: ["react", "typescript", "tailwind", "rust", "tauri"],
+    image: "./images/projects/paperflow.png"
+  },
+  {
     name: "Brian Twene",
     url: "https://briantwene.github.io/portfolio-v1",
     repo: "https://github.com/briantwene/portfolio-v1",
@@ -12,6 +19,13 @@ const projectList = [
     repo: "https://github.com/briantwene/snappub-react",
     tech: ["react", "nextjs", "sass"],
     image: "./images/projects/snappub.png"
+  },
+  {
+    name: "ColorSiphon",
+    url: "https://colorsiphon.vercel.app/",
+    repo: "https://github.com/briantwene/ColorSiphon",
+    tech: ["react", "typescript", "tailwind", "pwa"],
+    image: "./images/projects/colorsiphon.png"
   },
   {
     name: "Random Color Generator - PWA",
@@ -53,7 +67,10 @@ const iconMap = {
   node: "./images/logos/node.svg",
   nextjs: "./images/logos/nextjs.svg",
   pwa: "./images/logos/pwa.svg",
-  sass: "./images/logos/sass.svg"
+  sass: "./images/logos/sass.svg",
+  typescript: "./images/logos/typescript.svg",
+  rust: "./images/logos/rust.svg",
+  tauri: "./images/logos/tauri.svg"
 };
 
 const gridContainer = document.querySelector(".project-grid");

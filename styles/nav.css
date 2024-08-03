@@ -47,7 +47,7 @@ input[type="checkbox"] {
 
 .sticky > .menu {
   transition: all 0.3s;
-  background-color: #8c60bb;
+  background-color: #7416d9;
 }
 
 @keyframes SlideIn {
@@ -98,7 +98,7 @@ input[type="checkbox"] {
   .sticky {
     position: fixed;
     top: 0;
-    background-color: #8c60bb;
+    background-color: #7416d9;
     border-radius: 48px;
     width: max-content;
     animation: SlideIn 500ms ease 0s 1 normal forwards;

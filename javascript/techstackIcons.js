@@ -22,11 +22,25 @@ const skillsArray = [
     name: "Tailwind CSS"
   },
   {
-    src: "./images/logos/postgres.png",
-    name: "PostgreSQL"
-  },  {
     src: "./images/logos/node.svg",
     name: "Node.js"
+  },
+  {
+    src: "./images/logos/python.svg",
+    name: "Python"
+  },
+  {
+    src: "./images/logos/postgres.png",
+    name: "PostgreSQL"
+  },
+  {
+    src: "./images/logos/docker.svg",
+    name: "Docker"
+  },
+  {
+
+    src: "./images/logos/git.svg"
+    name: "Git"
   }
 ];
 

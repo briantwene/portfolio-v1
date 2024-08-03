@@ -1,21 +1,34 @@
+/* Pulsate animatioj for box project item */
+@keyframes pulsate {
+    0% {
+        box-shadow: 0 4px 20px rgba(116, 22, 217, 0.6);
+    }
+    50% {
+        box-shadow: 0 4px 30px rgba(116, 22, 217, 0.8);
+    }
+    100% {
+        box-shadow: 0 4px 20px rgba(116, 22, 217, 0.6);
+    }
+}
+
 
 .project-grid{
     display: grid;
-    /* grid-template-columns: repeat(3, 1fr); */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-auto-rows: auto;
     grid-gap: 1rem;
 }
 
-.project-item{
+.project-item {
+    border: 2px solid #333333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-border: 2px solid #333333;
-
-
-
+  .project-item:hover {
+    transform: translateY(-10px);
+    animation: pulsate 1.5s infinite;
 }
 
-.project-item-img{}
 
 
 .project-item-content{

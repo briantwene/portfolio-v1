@@ -1,0 +1,34 @@
+.footer-content {
+  display: flex;
+  flex-direction: flex-column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.resume-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #7416d9;
+  color: white;
+  text-decoration: none;
+  border-radius: 16px;
+  transition: background-color 0.3s;
+  font-size: 20px;
+}
+
+.resume-button:hover {
+  background-color: #6a3ea1;
+}
+
+.social-link {
+  margin: 0 10px;
+  color: #7416d9;
+  text-decoration: none;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #6a3ea1;
+}

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Brian Twene</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/index.css" />
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="styles/timeline.css" />
     <link rel="stylesheet" href="styles/nav.css" />
     <link rel="stylesheet" href="styles/projects.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,6 +21,10 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/assets/favicon-16x16.png" />
+    <link rel="manifest" href="images/assets/site.webmanifest" />
   </head>
 
   <body class="page">
@@ -51,9 +57,12 @@
         </p>
 
         <div class="about-status">
-          <p class="text-md">🔭 I’m currently working on <a href="https://github.com/briantwene/paperflow">paperflow</a></p>
           <p class="text-md">
-            🌱 I’m currently learning Rust, Typescript, Redux
+            🔭 I’m currently working on
+            <a href="https://github.com/briantwene/paperflow">paperflow</a>
+          </p>
+          <p class="text-md">
+            🌱 I’m currently learning Rust, Typescript, Redux and Deep Learning
           </p>
           <p id="about-icons" class="icons"></p>
         </div>
@@ -66,13 +75,12 @@
         <p id="skills-icons" class="icons"></p>
 
         <!-- <p class="text-md">Languages I've experienced</p> -->
-        
       </div>
-      <div id="work" class="work subcontent">
+      <!-- <div id="work" class="work subcontent">
         <h2>Work Experience</h2>
 
         <div class="timeline-wrapper">
-          <div class="timeline">
+                   <div class="timeline">
             <div class="timeline-item">
               <div class="timeline-item-content">
                 <div class="timeline-item-title">
@@ -94,7 +102,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div id="projects" class="projects subcontent">
         <h2>Projects</h2>
@@ -103,10 +111,39 @@
       </div>
     </div>
 
-    <div class="footer">Footer</div>
+    <div class="footer">
+      <div class="footer-content">
+        <div>
+          <p class="text-md">Made with ❤️ by Brian Twene</p>
+          <p class="text-md">© <span id="current-year"></span> Brian Twene</p>
+        </div>
+        <div>
+          <a
+            href="https://rxresu.me/twene521/brian-twene"
+            target="_blank"
+            class="resume-button"
+            >View My Resume</a
+          >
+        </div>
+        <div class="social-media">
+          <a
+            href="https://github.com/briantwene"
+            target="_blank"
+            class="social-link"
+            >GitHub</a
+          >
+          <a
+            href="https://linkedin.com/in/briantwene"
+            target="_blank"
+            class="social-link"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+    </div>
   </body>
   <script src="./javascript/navbar.js"></script>
   <script src="./javascript/techstackIcons.js"></script>
   <script src="./javascript/renderProjects.js"></script>
-
+  <script src="./javascript/setYear.js"></script>
 </html>
