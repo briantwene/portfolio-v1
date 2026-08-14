@@ -14,6 +14,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
@@ -21,21 +25,39 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="apple-touch-icon" sizes="180x180" href="images/assets/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="images/assets/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="images/assets/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/assets/favicon-16x16.png"
+    />
     <link rel="manifest" href="images/assets/site.webmanifest" />
   </head>
 
   <body class="page">
-    <div id="home" class="hero">
-      <div class="logo">
-        <h1>Brian Twene</h1>
-      </div>
-
-      <nav>
-        <input type="checkbox" id="nav-toggle" />
-        <label for="nav-toggle" class="hamburger">&#9776;</label>
+    <header class="site-header">
+      <nav aria-label="Primary navigation">
+        <button
+          type="button"
+          id="nav-toggle"
+          class="hamburger"
+          aria-label="Toggle navigation menu"
+          aria-controls="navList"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true">&#9776;</span>
+        </button>
 
         <ul id="navList" class="menu">
           <li class="link"><a href="#about">About</a></li>
@@ -44,10 +66,37 @@
           <li class="link"><a href="#projects">Projects</a></li>
         </ul>
       </nav>
-    </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <div class="logo">
+          <h1 id="hero-title">Brian Twene</h1>
+          <p class="hero-eyebrow">Software Engineer</p>
+          <div class="hero-actions">
+            <a class="hero-button hero-button-primary" href="#projects"
+              >View selected work</a
+            >
+            <a
+              class="hero-button hero-button-secondary"
+              href="https://rxresu.me/twene521/brian-twene-latest"
+              target="_blank"
+              rel="noreferrer"
+              >View my CV</a
+            >
+          </div>
+
+          <a class="scroll-indicator" href="#about">
+            <span>Scroll to explore</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </div>
+      </section>
 
     <div class="content">
-      <div id="about" class="about subcontent">
+      <section id="about" class="about subcontent">
         <h2>About</h2>
 
         <p class="about-main">
@@ -66,8 +115,8 @@
           </p>
           <p id="about-icons" class="icons"></p>
         </div>
-      </div>
-      <div id="skills" class="Skills subcontent">
+      </section>
+      <section id="skills" class="Skills subcontent">
         <h2>Skills</h2>
 
         <p class="text-md">The things I synergise well with</p>
@@ -75,7 +124,7 @@
         <p id="skills-icons" class="icons"></p>
 
         <!-- <p class="text-md">Languages I've experienced</p> -->
-      </div>
+      </section>
       <!-- <div id="work" class="work subcontent">
         <h2>Work Experience</h2>
 
@@ -104,12 +153,13 @@
         </div>
       </div> -->
 
-      <div id="projects" class="projects subcontent">
+      <section id="projects" class="projects subcontent">
         <h2>Projects</h2>
 
         <div class="project-grid"></div>
-      </div>
+      </section>
     </div>
+    </main>
 
     <div class="footer">
       <div class="footer-content">

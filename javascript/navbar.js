@@ -11,6 +11,9 @@ let isHeroIntersecting = false;
 
 const checkViewportMode = ({ target: { innerWidth } }) => {
   isDesktop = innerWidth >= 768;
+  if (isDesktop) {
+    hamburgerToggle.setAttribute("aria-expanded", "false");
+  }
   setNavbarState();
 };
 
@@ -40,16 +43,19 @@ window.addEventListener("resize", checkViewportMode);
 //event listener for when the user selects a link from the nav in mobile mode
 // this will close the navigation bar so that it doesnt stay open
 navbar.addEventListener("click", (e) => {
-  if (event.target.parentNode.classList.contains("link")) {
-    hamburgerToggle.checked = false;
+  if (e.target.closest(".link")) {
+    hamburgerToggle.setAttribute("aria-expanded", "false");
   }
+});
+
+hamburgerToggle.addEventListener("click", () => {
+  const isExpanded = hamburgerToggle.getAttribute("aria-expanded") === "true";
+  hamburgerToggle.setAttribute("aria-expanded", String(!isExpanded));
 });
 
 // Intersection Observer setup
 const observer = new IntersectionObserver((entries) => {
   const element = entries.find((entry) => entry.target === hero);
-  console.log(element);
-
   // toggle off the sticky navigation based on user viewport
   if (element) {
     isHeroIntersecting = element.isIntersecting;
