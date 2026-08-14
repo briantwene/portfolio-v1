@@ -75,7 +75,7 @@ const appendIcons = (iconArray, container) => {for (const skill of iconArray) {
 
 
 
-appendIcons(learningArray, learningContainer)
+//appendIcons(learningArray, learningContainer)
 appendIcons(skillsArray, skillsContainer)
 
 

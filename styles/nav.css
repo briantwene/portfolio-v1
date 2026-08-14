@@ -108,6 +108,7 @@ nav {
     color: white;
     list-style-type: none;
     margin: 16px;
+    gap: 1.5rem;
     z-index: 1;
   }
 
@@ -137,5 +138,9 @@ nav {
 
   .link a {
     padding: 0;
+  }
+
+  .link {
+    margin: 0;
   }
 }
