@@ -52,11 +52,16 @@
 
 
 html {
-   
     background-color: #121212;
     color: white;
     font-family:"Poppins",Verdana, Geneva, Tahoma, sans-serif;
     scroll-behavior:smooth;
+}
+
+:root {
+  --accent: #d8b4fe;
+  --accent-surface: rgba(18, 18, 18, 0.94);
+  --line: #333333;
 }
 
 

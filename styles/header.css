@@ -1,41 +1,130 @@
 .hero {
+    position: relative;
     background-image: url("../images/header.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size:auto;
-    height: 100vh;
+    background-size: cover;
+    min-height: 100svh;
     width: 100%;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+.hero-content {
+    width: min(100% - 3rem, 1100px);
+    margin: auto;
+    position: relative;
+    z-index: 1;
+  transform: translateY(clamp(2rem, 6vh, 5rem));
 }
 
 
 .logo{
-    flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2em;
 }
 
 
 
 .logo > h1 {
-    font-family: "Montserrat";
-    font-size: 48px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 32px;
-    text-align: center;
+    font-family: "Space Grotesk";
+    font-size: clamp(3rem, 12vw, 8rem);
+    font-weight: 700;
+    line-height: 0.95;
     color: white;
+    text-transform: uppercase;
     animation: fadeIn 1s ease 0s 1 normal forwards;
 }
 
+.hero-eyebrow {
+  margin-top: 1.5rem;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 600;
+}
+
+.hero-summary {
+  max-width: 58ch;
+  margin-top: 1rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.hero-button {
+  padding: 0.8rem 1.1rem;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero-button-primary {
+  background: white;
+  color: #121212;
+}
+
+.hero-button:hover,
+.hero-button:focus-visible {
+  background: #121212;
+  color: white;
+}
+
+.scroll-indicator {
+  /* position: absolute; */
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 1;
+  font-size: 0.85rem;
+}
+
+.scroll-indicator span:last-child {
+  animation: scrollHint 1.5s ease-in-out infinite;
+  font-size: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-indicator,
+  .scroll-indicator span:last-child,
+  .logo > h1 {
+    animation: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-content {
+    width: min(100% - 5rem, 1100px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    width: min(100% - 8rem, 1100px);
+  }
+}
 
 
-
-@media (min-width: 768px) {
-    .logo > h1 {
-        font-size: 128px;
-    }
-
+@keyframes scrollHint {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(0.35rem); }
 }

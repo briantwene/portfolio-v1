@@ -1,159 +1,118 @@
 const projectList = [
   {
-    name: "Paperflow",
-    url: "https://github.com/briantwene/paperflow",
-    repo: "https://github.com/briantwene/paperflow",
-    tech: ["react", "typescript", "tailwind", "rust", "tauri"],
-    image: "./images/projects/paperflow.png"
-  },
-  {
-    name: "Brian Twene",
-    url: "https://briantwene.github.io/portfolio-v1",
-    repo: "https://github.com/briantwene/portfolio-v1",
-    tech: ["html", "css", "js"],
-    image: "./images/projects/portfolio.png"
-  },
-  {
-    name: "Snappub",
-    url: "https://snappub-react.vercel.app/",
-    repo: "https://github.com/briantwene/snappub-react",
-    tech: ["react", "nextjs", "sass"],
-    image: "./images/projects/snappub.png"
+    name: "PaperFlow",
+    description:
+      "A cross-platform desktop application for discovering, downloading, and setting wallpapers sourced from Reddit.",
+    contribution:
+      "Built the React and TypeScript interface, integrated the Tauri and Rust core, and helped ship packaged releases for Windows, macOS, and Linux.",
+    tech: ["React", "TypeScript", "Tauri", "Rust"],
+    status: "Released · Active maintenance",
+    image: "./images/projects/paperflow.png",
+    imageAlt: "PaperFlow desktop application interface",
+    liveUrl: "https://github.com/briantwene/paperflow/releases",
+    liveLabel: "View releases",
+    repoUrl: "https://github.com/briantwene/paperflow",
+    featured: true
   },
   {
     name: "ColorSiphon",
-    url: "https://colorsiphon.vercel.app/",
-    repo: "https://github.com/briantwene/ColorSiphon",
-    tech: ["react", "typescript", "tailwind", "pwa"],
-    image: "./images/projects/colorsiphon.png"
+    description:
+      "A visual colour utility for exploring, extracting, and working with colour palettes in the browser.",
+    contribution:
+      "Built a responsive React experience with TypeScript and PWA support for an installable personal tool.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "PWA"],
+    status: "Live project",
+    image: "./images/projects/colorsiphon.png",
+    imageAlt: "ColorSiphon colour utility interface",
+    liveUrl: "https://colorsiphon.vercel.app/",
+    liveLabel: "Open live project",
+    repoUrl: "https://github.com/briantwene/ColorSiphon"
   },
   {
-    name: "Random Color Generator - PWA",
-    url: "https://briantwene.github.io/Colour-Generator-Project/",
-    repo: "https://github.com/briantwene/Colour-Generator-Project",
-    tech: ["html", "css", "js", "pwa"],
-    image: "./images/projects/color.png"
-  },
-  {
-    name: "JavaScript Timer",
-    url: "https://briantwene.github.io/js_timer/",
-    repo: "https://github.com/briantwene/js_timer",
-    tech: ["html", "css", "js"],
-    image: "./images/projects/timer.png"
-  },
-  {
-    name: "To-do App",
-    url: "https://briantwene.github.io/js_todo_app/",
-    repo: "https://github.com/briantwene/js_todo_app",
-    tech: ["html", "css", "js"],
-    image: "./images/projects/todo.png"
-  },
-  {
-    name: "Responsive Navbar Toggle JS",
-    url: "https://briantwene.github.io/js_responsive_nav_toggle/",
-    repo: "https://github.com/briantwene/js_responsive_nav_toggle",
-    tech: ["html", "css", "js"],
-    image: "./images/projects/navbar.png"
+    name: "Ambitious Messenger",
+    description:
+      "A full-stack messaging application exploring authentication, database-backed conversations, and realtime communication.",
+    contribution:
+      "Worked across the application structure, frontend, backend services, database setup, and Docker-based local development workflow.",
+    tech: ["React", "Node.js", "PostgreSQL", "Docker"],
+    status: "Completed academic project",
+    repoUrl: "https://github.com/briantwene/ambitious-messenger"
   }
 ];
 
-const iconMap = {
-  html: "./images/logos/html.svg",
-  css: "./images/logos/css.svg",
-  js: "./images/logos/js.svg",
-  react: "./images/logos/react.png",
-  tailwind: "./images/logos/tailwind-css.svg",
-  postgres: "./images/logos/postgres.png",
-  node: "./images/logos/node.svg",
-  nextjs: "./images/logos/nextjs.svg",
-  pwa: "./images/logos/pwa.svg",
-  sass: "./images/logos/sass.svg",
-  typescript: "./images/logos/typescript.svg",
-  rust: "./images/logos/rust.svg",
-  tauri: "./images/logos/tauri.svg"
-};
-
 const gridContainer = document.querySelector(".project-grid");
 
-// create elements
-const iconMarkup = (url, tech) => {
-  let iconlist = [];
-  const githubImage = Object.assign(document.createElement("div"), {
-    className: "project-icon"
-  });
-  const github = Object.assign(document.createElement("img"), {
-    src: "./images/logos/github.svg"
-  });
-
-  const githubLink = Object.assign(document.createElement("a"), {
-    href: url
-  });
-
-  githubLink.appendChild(github);
-  githubImage.appendChild(githubLink);
-
-  for (const icon of tech) {
-    const container = Object.assign(document.createElement("div"), {
-      className: "project-icon"
-    });
-    const image = Object.assign(document.createElement("img"), {
-      src: iconMap[icon]
-    });
-
-    container.appendChild(image);
-
-    iconlist.push(container);
-  }
-
-  return { iconlist, githubImage };
+const createLink = (url, label) => {
+  const link = document.createElement("a");
+  link.href = url;
+  link.textContent = label;
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  return link;
 };
 
 for (const project of projectList) {
-  //icons
-  const { iconlist, githubImage } = iconMarkup(project.repo, project.tech);
+  const container = document.createElement("article");
+  container.className = `project-item${
+    project.featured ? " project-item-featured" : ""
+  }`;
 
-  const projectImage = Object.assign(document.createElement("img"), {
-    src: project.image
-  });
+  const visual = document.createElement("div");
+  visual.className = `project-item-visual${
+    project.image ? "" : " project-item-visual-placeholder"
+  }`;
 
-  const container = Object.assign(document.createElement("div"), {
-    className: "project-item"
-  });
-  const imageContainer = Object.assign(document.createElement("div"), {
-    className: "project-item-img",
-    src: project.image
-  });
-  const content = Object.assign(document.createElement("div"), {
-    className: "project-item-content"
-  });
-  const title = Object.assign(document.createElement("div"), {
-    className: "project-item-content-title"
-  });
-  const icons = Object.assign(document.createElement("div"), {
-    className: "project-item-content-icons"
-  });
-  const projectLink = Object.assign(document.createElement("a"), {
-    href: project.url
-  });
-
-  const titleText = document.createTextNode(project.name);
-  projectLink.appendChild(titleText);
-  title.appendChild(projectLink);
-
-  for (const icon of iconlist) {
-    icons.appendChild(icon);
+  if (project.image) {
+    const image = document.createElement("img");
+    image.src = project.image;
+    image.alt = project.imageAlt;
+    visual.appendChild(image);
+  } else {
+    const visualLabel = document.createElement("span");
+    visualLabel.textContent = "Full-stack messaging application";
+    visual.appendChild(visualLabel);
   }
 
-  icons.appendChild(githubImage);
-  content.appendChild(title);
-  content.appendChild(icons);
+  const content = document.createElement("div");
+  content.className = "project-item-content";
 
-  imageContainer.appendChild(projectImage);
-  container.appendChild(imageContainer);
+  const heading = document.createElement("h3");
+  heading.textContent = project.name;
+  content.appendChild(heading);
+
+  const description = document.createElement("p");
+  description.className = "project-description";
+  description.textContent = project.description;
+  content.appendChild(description);
+
+  const contribution = document.createElement("p");
+  contribution.className = "project-contribution";
+  contribution.textContent = project.contribution;
+  content.appendChild(contribution);
+
+  const tech = document.createElement("p");
+  tech.className = "project-tech";
+  tech.textContent = project.tech.join(" · ");
+  content.appendChild(tech);
+
+  const footer = document.createElement("div");
+  footer.className = "project-item-footer";
+
+  const status = document.createElement("span");
+  status.className = "project-status";
+  status.textContent = project.status;
+  footer.appendChild(status);
+
+  const links = document.createElement("div");
+  links.className = "project-links";
+  if (project.liveUrl) {
+    links.appendChild(createLink(project.liveUrl, project.liveLabel));
+  }
+  links.appendChild(createLink(project.repoUrl, "Source code"));
+  footer.appendChild(links);
+
+  content.appendChild(footer);
+  container.appendChild(visual);
   container.appendChild(content);
-
   gridContainer.appendChild(container);
 }
-
-
-
