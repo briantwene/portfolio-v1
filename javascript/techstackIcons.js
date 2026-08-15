@@ -1,83 +1,69 @@
-// create the html with the images in it and add to then dom
-
-const skillsArray = [
+const skillGroups = [
   {
-    src: "./images/logos/html.svg",
-    name: "HTML"
+    name: "Languages",
+    skills: [
+      { name: "C#" },
+      { name: "TypeScript", src: "./images/logos/typescript.svg" },
+      { name: "JavaScript", src: "./images/logos/js.svg" },
+      { name: "SQL" },
+      { name: "HTML/CSS", src: "./images/logos/html.svg" },
+      { name: "Swift" }
+    ]
   },
   {
-    src: "./images/logos/css.svg",
-    name: "CSS"
+    name: "Frameworks",
+    skills: [
+      { name: ".NET" },
+      { name: "React", src: "./images/logos/react.png" },
+      { name: "Angular" },
+      { name: "Next.js", src: "./images/logos/nextjs.svg" },
+      { name: "Express.js" },
+      { name: "Ionic" }
+    ]
   },
   {
-    src: "./images/logos/js.svg",
-    name: "JavaScript"
-  },
-  {
-    src: "./images/logos/react.png",
-    name: "React"
-  },
-  {
-    src: "./images/logos/tailwind-css.svg",
-    name: "Tailwind CSS"
-  },
-  {
-    src: "./images/logos/node.svg",
-    name: "Node.js"
-  },
-  {
-    src: "./images/logos/python.svg",
-    name: "Python"
-  },
-  {
-    src: "./images/logos/postgres.png",
-    name: "PostgreSQL"
-  },
-  {
-    src: "./images/logos/docker.svg",
-    name: "Docker"
-  },
-  {
-    src: "./images/logos/git.svg",
-    name: "Git"
+    name: "Tools & platforms",
+    skills: [
+      { name: "Git", src: "./images/logos/git.svg" },
+      { name: "Docker", src: "./images/logos/docker.svg" },
+      { name: "Azure" },
+      { name: "Azure DevOps" },
+      { name: "PostgreSQL", src: "./images/logos/postgres.png" }
+    ]
   }
 ];
 
+const skillsContainer = document.getElementById("skills-groups");
 
-const learningArray = [
-    {
-        src: "./images/logos/rust.svg",
-        name: "Rust"
-      },
-      {
-        src: "./images/logos/typescript.svg",
-        name: "Typescript"
-      },
-      {
-        src: "./images/logos/redux.svg",
-        name: "React Redux"
-      },
-]
+for (const group of skillGroups) {
+  const groupElement = document.createElement("div");
+  groupElement.className = "skills-group";
 
+  const heading = document.createElement("h3");
+  heading.textContent = group.name;
+  groupElement.appendChild(heading);
 
-//get the container
-const skillsContainer = document.getElementById("skills-icons");
-const learningContainer = document.getElementById("about-icons");
+  const list = document.createElement("div");
+  list.className = "skills-list";
 
-const appendIcons = (iconArray, container) => {for (const skill of iconArray) {
-    const element = Object.assign(document.createElement("img"),  {src: skill.src, alt: skill.name})
+  for (const skill of group.skills) {
+    const skillElement = document.createElement("span");
+    skillElement.className = "skill-tag";
 
-    const imageContainer =  Object.assign(document.createElement("div"),  { className: "icon"})
+    if (skill.src) {
+      const icon = document.createElement("img");
+      icon.src = skill.src;
+      icon.alt = "";
+      icon.setAttribute("aria-hidden", "true");
+      skillElement.appendChild(icon);
+    }
 
-    imageContainer.appendChild(element)
-    container.appendChild(imageContainer);
-}}
+    const label = document.createElement("span");
+    label.textContent = skill.name;
+    skillElement.appendChild(label);
+    list.appendChild(skillElement);
+  }
 
-
-
-//appendIcons(learningArray, learningContainer)
-appendIcons(skillsArray, skillsContainer)
-
-
-
-
+  groupElement.appendChild(list);
+  skillsContainer.appendChild(groupElement);
+}

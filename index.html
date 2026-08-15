@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/content.css" />
     <link rel="stylesheet" href="styles/timeline.css" />
     <link rel="stylesheet" href="styles/nav.css" />
-    <link rel="stylesheet" href="styles/projects.css" />
+    <link rel="stylesheet" href="styles/projects.css?v=2" />
     <link rel="stylesheet" href="styles/footer.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -123,11 +123,11 @@
       <section id="skills" class="Skills subcontent">
         <h2>Skills</h2>
 
-        <p class="text-md">The things I synergise well with</p>
+        <p class="skills-intro">
+          Technologies I have used professionally and across personal projects.
+        </p>
 
-        <p id="skills-icons" class="icons"></p>
-
-        <!-- <p class="text-md">Languages I've experienced</p> -->
+        <div id="skills-groups" class="skills-groups"></div>
       </section>
       <section id="work" class="work subcontent">
         <h2>Work Experience</h2>
@@ -183,6 +183,13 @@
         <h2>Projects</h2>
 
         <div class="project-grid"></div>
+        <a
+          class="project-archive-link"
+          href="https://github.com/briantwene?tab=repositories"
+          target="_blank"
+          rel="noreferrer"
+          >View project archive on GitHub</a
+        >
       </section>
     </div>
     </main>
@@ -220,6 +227,6 @@
   </body>
   <script src="./javascript/navbar.js"></script>
   <script src="./javascript/techstackIcons.js"></script>
-  <script src="./javascript/renderProjects.js"></script>
+  <script src="./javascript/renderProjects.js?v=2"></script>
   <script src="./javascript/setYear.js"></script>
 </html>
