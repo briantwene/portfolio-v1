@@ -17,7 +17,7 @@
 .resume-button {
   display: inline-block;
   padding: 0.6rem 0.9rem;
-  border: 1px solid #d8b4fe;
+  border: 1px solid var(--accent);
   color: white;
   text-decoration: none;
   font-size: 0.9rem;
@@ -29,7 +29,7 @@
 .resume-button:focus-visible,
 .social-link:hover,
 .social-link:focus-visible {
-  color: #d8b4fe;
+  color: var(--accent);
 }
 
 .social-link {

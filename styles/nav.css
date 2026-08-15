@@ -18,13 +18,15 @@ nav {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
-  width: 100%;
+  right: 1rem;
+  width: min(18rem, calc(100% - 2rem));
   list-style-type: none;
-  text-align: center;
+  text-align: left;
   margin: 0;
   padding: 0.75rem 1rem 1rem;
-  background: rgba(18, 18, 18, 0.95);
+  background: var(--accent-surface);
+  border: 1px solid var(--accent);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
 }
 
 #nav-toggle[aria-expanded="true"] ~ .menu {
@@ -33,9 +35,12 @@ nav {
 
 .hamburger {
   display: block;
-  border: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-left: auto;
+  border: 1px solid var(--accent);
   background: transparent;
-  padding: 0.25rem 0.5rem;
+  padding: 0;
   color: white;
   cursor: pointer;
   font-size: 1.5rem;
@@ -58,14 +63,16 @@ nav {
 .sticky {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background-color: #8c60bb;
+  padding: 0.75rem 1rem;
+  background: var(--accent-surface);
+  border-bottom: 1px solid var(--accent);
   animation: SlideIn 500ms ease 0s 1 normal forwards;
 }
 
-.sticky > .menu {
-  transition: all 0.3s;
-  background-color: #7416d9;
+.sticky .menu {
+  background: var(--accent-surface);
 }
 
 .hamburger:focus-within,
@@ -105,6 +112,8 @@ nav {
     width: auto;
     padding: 0;
     background: transparent;
+    border: 0;
+    box-shadow: none;
     color: white;
     list-style-type: none;
     margin: 16px;
@@ -123,24 +132,15 @@ nav {
     user-select: none;
   }
 
-  .sticky {
-    position: fixed;
-    top: 0;
-    background-color: #7416d9;
-    border-radius: 48px;
-    width: max-content;
-    animation: SlideIn 500ms ease 0s 1 normal forwards;
-  }
-
-  .menu {
-    list-style-type: none;
-  }
-
   .link a {
     padding: 0;
   }
 
   .link {
     margin: 0;
+  }
+
+  nav.sticky {
+    padding: 0.75rem 1rem;
   }
 }

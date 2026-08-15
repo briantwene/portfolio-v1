@@ -1,10 +1,8 @@
 
 // get the needed elements
 const navbar = document.querySelector("nav");
-const innerNav = document.querySelector("#navList")
 const hero = document.querySelector("#home");
-const hamburgerToggle = document.querySelector("#nav-toggle")
-
+const hamburgerToggle = document.querySelector("#nav-toggle");
 
 let isDesktop = window.innerWidth >= 768;
 let isHeroIntersecting = false;
@@ -18,23 +16,10 @@ const checkViewportMode = ({ target: { innerWidth } }) => {
 };
 
 const setNavbarState = () => {
-  // two cases if isDesktop and is intersecting
-  if (isDesktop) {
-    if (isHeroIntersecting) {
-      innerNav.classList.remove("sticky");
-      navbar.classList.remove("sticky");
-    } else {
-      innerNav.classList.add("sticky");
-      navbar.classList.remove("sticky");
-    }
+  if (isHeroIntersecting) {
+    navbar.classList.remove("sticky");
   } else {
-    if (isHeroIntersecting) {
-      innerNav.classList.remove("sticky");
-      navbar.classList.remove("sticky");
-    } else {
-      navbar.classList.add("sticky");
-      innerNav.classList.remove("sticky");
-    }
+    navbar.classList.add("sticky");
   }
 };
 

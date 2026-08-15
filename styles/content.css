@@ -56,7 +56,7 @@ section[id] {
 }
 
 .skills-groups {
-  border-top: 1px solid #333333;
+  border-top: 1px solid var(--line);
 }
 
 .skills-group {
@@ -68,7 +68,7 @@ section[id] {
 }
 
 .skills-group h3 {
-  color: #d8b4fe;
+  color: var(--accent);
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.08em;

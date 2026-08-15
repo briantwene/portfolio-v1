@@ -35,7 +35,7 @@
     position: absolute;
     left: -6px;
     background-color: #ffffff;
-    border: 3px solid #744680;
+    border: 3px solid var(--accent);
     border-radius: 50%;
 
     height: 12px;
@@ -45,7 +45,7 @@
 }
 
 .timeline-item-current::before {
-    background-color: #744680;
+    background-color: var(--accent);
     box-shadow: 0 0 0 4px rgba(116, 70, 128, 0.2);
 }
 
@@ -72,9 +72,9 @@
     display: inline-block;
     margin-left: 0.5rem;
     padding: 0.15rem 0.45rem;
-    border: 1px solid #744680;
+    border: 1px solid var(--accent);
     border-radius: 999px;
-    color: #d8b4fe;
+    color: var(--accent);
     font-size: 0.7rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
